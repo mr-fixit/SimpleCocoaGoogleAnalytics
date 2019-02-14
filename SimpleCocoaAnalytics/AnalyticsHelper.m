@@ -162,7 +162,7 @@ static const float kDefaultSendInterval = 60 * 5; // 5 minutes
 - (void)saveCachedScreensToDisk {
     // Get the previously recorded screen names
     NSMutableArray *recordedScreens = [NSMutableArray new];
-    NSArray *previouslyRecordedScreens = [self recordedEventDictionaries];
+    NSArray *previouslyRecordedScreens = [self recordedScreens];
     if (previouslyRecordedScreens) {
         [recordedScreens addObjectsFromArray:previouslyRecordedScreens];
     }
