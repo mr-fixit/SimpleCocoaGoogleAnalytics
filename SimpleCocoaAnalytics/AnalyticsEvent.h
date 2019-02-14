@@ -22,6 +22,6 @@
 @property (strong) NSNumber *value;
 
 + (AnalyticsEvent*)analyticsEventWithDictionary:(NSDictionary*)dict;
-- (NSDictionary*)dictionaryRepresenation;
+- (NSDictionary*)dictionaryRepresentation;
 
 @end

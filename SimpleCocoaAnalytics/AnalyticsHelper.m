@@ -186,7 +186,7 @@ static const float kDefaultSendInterval = 60 * 5; // 5 minutes
     
     // Convert the events to dictionaries for storage, add to the existing events
     for (AnalyticsEvent *event in self.cachedEvents) {
-        NSDictionary *eventDict = [event dictionaryRepresenation];
+        NSDictionary *eventDict = [event dictionaryRepresentation];
         [recordedEvents addObject:eventDict];
     }
 
@@ -447,7 +447,7 @@ static const float kDefaultSendInterval = 60 * 5; // 5 minutes
                                viewName // Screen name
                                ];
     
-    payloadString = [payloadString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    payloadString = [payloadString stringByAddingPercentEncodingWithAllowedCharacters:NSCharacterSet.URLPathAllowedCharacterSet];
     
     return [payloadString dataUsingEncoding:NSUTF8StringEncoding];
 }

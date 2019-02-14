@@ -16,7 +16,7 @@ static NSString *const kEventValue = @"eventValue";
 @implementation AnalyticsEvent
 
 + (AnalyticsEvent*)analyticsEventWithDictionary:(NSDictionary*)dict {
-    AnalyticsEvent *analyticsEvent = [[AnalyticsEvent alloc] init];
+    AnalyticsEvent *analyticsEvent = AnalyticsEvent.new;
     
     analyticsEvent.action = [dict objectForKey:kEventActionKey];
     analyticsEvent.category = [dict objectForKey:kEventCategory];
