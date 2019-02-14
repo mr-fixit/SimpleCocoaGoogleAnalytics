@@ -26,14 +26,19 @@ static NSString *const kEventValue = @"eventValue";
     return analyticsEvent;
 }
 
-- (NSDictionary*)dictionaryRepresenation {
-    // We expect all of the values to be filled in here. If not, BOOM.
-    return @{
-             kEventCategory:self.category,
-             kEventActionKey:self.action,
-             kEventLabelKey:self.label,
-             kEventValue:self.value
-             };
+- (NSDictionary*)dictionaryRepresentation {
+    NSMutableDictionary *result = [NSMutableDictionary dictionaryWithDictionary:
+                                   @{
+                                     kEventCategory:self.category,
+                                     kEventActionKey:self.action,
+                                     }];
+    if (self.label != nil) {
+        result[kEventLabelKey] = self.label;
+    }
+    if (self.value != nil) {
+        result[kEventValue] = self.value;
+    };
+    return result.copy;
 }
 
 @end
